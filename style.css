@@ -1,0 +1,255 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url('bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* INPUT NAMA */
+.name-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.welcome-text {
+  font-size: 64px;
+  color: #a35757;
+  margin-bottom: 100px;
+  text-shadow: 1px 1px 2px #ffffff;
+  font-weight: bold;
+}
+
+.name-input {
+  padding: 12px;
+  width: 20%;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid #a35757;
+  margin-bottom: 15px;
+}
+
+.name-submit {
+  padding: 10px 25px;
+  background-color: #a35757;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* MENU UTAMA */
+.menu-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  z-index: 5;
+}
+
+.main-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.button-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu-btn {
+  padding: 15px 40px;
+  background-color: #a35757;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-btn:hover {
+  background-color: #833636;
+}
+
+/* QUIZ CONTAINER */
+.quiz-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #e682be;
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  box-shadow: 0 0 20px #eda2e0;
+  text-align: center;
+}
+
+#question {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.option {
+  flex: 1;
+  padding: 12px;
+  font-size: 1em;
+  background: #111;
+  border: 2px solid #f58dd0;
+  color: #f585de;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option:hover {
+  background: #eb8ddf;
+  color: #000;
+}
+
+#timer {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+#result {
+  font-size: 1.2em;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.option:active {
+  transform: scale(0.95);
+}
+
+.option.correct {
+  background-color: #00ff99 !important;
+  color: #000 !important;
+  border-color: #00ff99 !important;
+}
+
+.option.wrong {
+  background-color: #ff3333 !important;
+  color: #fff !important;
+  border-color: #ff3333 !important;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
+/* LEADERBOARD */
+.leaderboard-container {
+  width: 280px;
+  background-color: #e8b7c8;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #f4c0d9;
+  color: #333;
+  z-index: 1000;
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderboard-title {
+  background-color: #a35757;
+  color: white;
+  margin: 0;
+  padding: 12px;
+  font-size: 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  text-align: center;
+}
+
+.leaderboard-scroll {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.leaderboard-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.leaderboard-scroll::-webkit-scrollbar-thumb {
+  background-color: #a35757;
+  border-radius: 5px;
+}
+
+#leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#leaderboard-table th, #leaderboard-table td {
+  border: 1px solid #fff;
+  padding: 8px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #222;
+}
+
+#leaderboard-table thead th {
+  background-color: #d88fa3;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* TOMBOL KEMBALI */
+#back-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #a35757;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}

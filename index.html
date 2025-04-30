@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QUIZ FISIKA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Halaman Input Nama -->
+  <div id="name-screen" class="name-screen">
+    <h1 class="welcome-text">SELAMAT DATANG DI QUIZ FISIKA</h1>
+    <input type="text" id="name-input" class="name-input" placeholder="Masukkan nama Anda..." />
+    <button onclick="submitName()" class="name-submit">LANJUT</button>
+  </div>
+
+  <!-- Menu Utama -->
+  <div id="menu-wrapper" class="menu-wrapper" style="display: none;">
+    <div id="main-menu" class="main-menu">
+      <div class="button-overlay">
+        <button class="menu-btn play" onclick="startQuiz()">MULAI</button>
+        <button class="menu-btn quit" onclick="quitGame()">KELUAR</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Halaman Kuis -->
+  <div id="quiz-container" class="quiz-container" style="display: none;">
+    <div id="timer">Waktu: 15</div>
+    <div id="question-container" class="neon-box">
+      <div id="question" class="question"></div>
+      <div class="options-row">
+        <button class="option" id="optionA"></button>
+        <button class="option" id="optionB"></button>
+      </div>
+      <div class="options-row">
+        <button class="option" id="optionC"></button>
+        <button class="option" id="optionD"></button>
+      </div>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <!-- Leaderboard -->
+  <div id="leaderboard" class="leaderboard-container" style="display: none;">
+    <h2 class="leaderboard-title">LEADERBOARD</h2>
+    <div class="leaderboard-scroll">
+      <table id="leaderboard-table">
+        <thead>
+          <tr>
+            <th>NAMA</th>
+            <th>SKOR</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tombol kembali -->
+  <button id="back-button" onclick="returnToMenu()">← KEMBALI</button>
+
+  <!-- Musik & Script -->
+  <script src="script.js"></script>
+  <audio id="bg-music" src="musik.mp3" loop></audio>
+  <button id="music-toggle" onclick="toggleMusic()" style="position: fixed; top: 10px; right: 10px; background: none; border: none; z-index: 999;">
+    <img id="music-icon" src="icon-on.png" alt="Music" width="40"/>
+  </button>
+</body>
+</html>
